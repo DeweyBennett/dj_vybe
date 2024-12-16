@@ -1,5 +1,4 @@
 import { Image } from "sanity"
-import { CartDetails } from "use-shopping-cart/core"
 
 export interface BookedEventProps {
   _id: string
