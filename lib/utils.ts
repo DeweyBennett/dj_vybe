@@ -1,3 +1,6 @@
+import { type ClassValue, clsx } from 'clsx'
+
+import { twMerge } from 'tailwind-merge'
 import qs from 'query-string'
 
 interface UrlQueryParams {
@@ -11,9 +14,9 @@ interface RemoveUrlQueryParams {
   keysToRemove: string[]
 }
 
-// export function cn(...inputs: ClassValue[]) {
-//   return twMerge(clsx(inputs))
-// }
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs))
+}
 
 // export function getSizeName(value: string) {
 //   switch (value) {
