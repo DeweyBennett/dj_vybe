@@ -63,9 +63,9 @@ function Banner() {
 
     function setData() {
         console.log("User: ", user)
-        setHostName(user?.fullName! ? user.fullName : '')
-        setHostEmail(user?.emailAddresses.length != 0 ? user?.emailAddresses[0]!.emailAddress! : '')
-        setHostPhone(user?.phoneNumbers.length != 0 ? user?.phoneNumbers[0]!.phoneNumber! : '')
+        setHostName(user!.fullName! ? user!.fullName : '')
+        setHostEmail(user!.emailAddresses.length != 0 ? user!.emailAddresses[0]!.emailAddress! : '')
+        setHostPhone(user!.phoneNumbers.length != 0 ? user!.phoneNumbers[0]!.phoneNumber! : '')
     }
 
     const onCheckout = async () => {
@@ -109,9 +109,9 @@ function Banner() {
         setContactView(false)
         setEventView(false)
         setLogisticsView(false)
-        setHostName(user?.fullName!)
-        setHostEmail(user?.emailAddresses.length != 0 ? user?.emailAddresses[0]!.emailAddress! : '')
-        setHostPhone(user?.phoneNumbers.length != 0 ? user?.phoneNumbers[0]!.phoneNumber! : '')
+        setHostName(user!.fullName!)
+        setHostEmail(user!.emailAddresses.length != 0 ? user!.emailAddresses[0]!.emailAddress! : '')
+        setHostPhone(user!.phoneNumbers.length != 0 ? user!.phoneNumbers[0]!.phoneNumber! : '')
         setTitle('')
         setAdditionalInfo('')
         setEstimatedAttendance(0)
@@ -333,11 +333,11 @@ function Banner() {
                             Your booking request has been received.
                         </h1>
                         <h3 className="mt-8 text-2xl leading-7 text-primary">
-                            Thank you, <span className="font-extrabold text-secondary">{user?.fullName}</span>!
+                            Thank you, <span className="font-extrabold text-secondary">{user!.fullName}</span>!
                         </h3>
                         <p className="mt-8 text-primary">
                             Check your purchase email{" "}
-                            <span className="mx-1 font-extrabold text-secondary">{user?.emailAddresses[0].emailAddress}</span> for your confirmation. We will be getting in touch with you soon for additional details.
+                            <span className="mx-1 font-extrabold text-secondary">{user!.emailAddresses[0].emailAddress}</span> for your confirmation. We will be getting in touch with you soon for additional details.
                         </p>
                     </div>
                 </>
