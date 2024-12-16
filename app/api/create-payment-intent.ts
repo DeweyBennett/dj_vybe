@@ -1,8 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
+import { Stripe } from "stripe"
 
-// This is your test secret API key.
-const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
-
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
 
 export default async function handler(req: NextRequest) {
     try {
