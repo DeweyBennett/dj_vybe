@@ -6,13 +6,7 @@ import Search from "@/components/Search";
 import { getAllPublicEvents } from "@/lib/actions/event.actions";
 import Image from "next/image";
 
-interface Props {
-  date: "desc", 
-  price: string, 
-  search: string
-}
-
-export default async function Home({ date, price, search }: Props) {
+export default async function Home( date: "desc", price: string, search: string ) {
 
   const results = await getAllPublicEvents( date, price, search )
 
