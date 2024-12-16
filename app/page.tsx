@@ -44,7 +44,7 @@ export default async function Home({ date, price, search }: Props) {
           
           <div className="text-center py-6">
             <h2 className="text-3xl text-secondary font-semibold">Public Events</h2>
-            <p className="text-[20px] font-normal leading-[30px] tracking-[2%] md:font-normal md:text-[24px] md:leading-[36px] text-white">Come and check out one of our event's hosted by DJ Vybe.</p>
+            <p className="text-[20px] font-normal leading-[30px] tracking-[2%] md:font-normal md:text-[24px] md:leading-[36px] text-white">Come and check out one of our event&apos;s hosted by DJ Vybe.</p>
           </div>
 
           <div className="flex flex-col justify-center items-center bg-primary-gradient shadow-lg shadow-secondary sm:px-16 mx-10 px-6 rounded-xl">

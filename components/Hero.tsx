@@ -3,10 +3,11 @@
 import React from 'react'
 import { useTypewriter, Cursor } from 'react-simple-typewriter'
 import BackgroundCycles from './BackgroundCircles';
+import Image from 'next/image';
 
 
 function Hero() {
-    const [text, count] = useTypewriter({
+    const [text] = useTypewriter({
         words: [
             'Book us today for your special event!'
         ],
@@ -21,7 +22,7 @@ function Hero() {
             </div>
 
             <div className='z-20'>
-                <img
+                <Image
                     src="/bg.png"
                     className='rounded-full h-64 w-64 mx-auto object-cover'
                     width='256'

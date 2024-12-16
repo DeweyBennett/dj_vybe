@@ -1,11 +1,6 @@
 'use server'
 
-import { revalidatePath } from 'next/cache'
-import { client } from "../../sanity/lib/client"
-
 import { handleError } from '@/lib/utils'
-
-import { groq } from 'next-sanity'
 
 export async function createUser() {
   try {
@@ -24,7 +19,7 @@ export async function getAllUsers() {
   }
 }
 
-export async function getUserId(userId: string) {
+export async function getUserId() {
   try {
 
   } catch (error) {
@@ -32,7 +27,7 @@ export async function getUserId(userId: string) {
   }
 }
 
-export async function getUserById(userId: string) {
+export async function getUserById() {
   try {
 
   } catch (error) {
@@ -48,7 +43,7 @@ export async function updateUser() {
   }
 }
 
-export async function deleteUser(Id: string) {
+export async function deleteUser() {
   try {
  
   } catch (error) {

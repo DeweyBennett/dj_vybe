@@ -63,7 +63,7 @@ export default function CheckoutForm({amount} : Props) {
 
   useEffect(() => {
     fetchIntent()
-  }, [amount])
+  })
 
   return (
     <>

@@ -4,12 +4,10 @@ import { PublicEventProps } from '@/types'
 import { urlFor } from '../sanity/lib/image'
 
 type CardProps = {
-  event: PublicEventProps,
-  hasOrderLink?: boolean,
-  hidePrice?: boolean
+  event: PublicEventProps
 }
 
-const Card = ({ event, hasOrderLink, hidePrice }: CardProps) => {
+const Card = ({ event }: CardProps) => {
 
   return (
     <div className="group relative flex min-h-[480px] w-full max-w-[400px] flex-col overflow-hidden rounded-xl bg-white shadow-md shadow-primary transition-all hover:shadow-lg hover:shadow-primary md:min-h-[438px]">

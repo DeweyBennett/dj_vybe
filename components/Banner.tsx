@@ -1,18 +1,15 @@
 "use client"
 
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { Button } from './Button'
 import Link from 'next/link'
-import { Input } from './Input'
 import { SignedIn, SignedOut, useUser } from '@clerk/nextjs'
-import { useRouter } from 'next/navigation'
-import DatePicker, { CalendarContainer } from 'react-datepicker'
+import DatePicker from 'react-datepicker'
 import "react-datepicker/dist/react-datepicker.css";
 import { CheckCheck } from 'lucide-react'
-import { createEventBooking, createTicketOrder } from '@/lib/actions/order.actions'
+import { createEventBooking } from '@/lib/actions/order.actions'
  
 function Banner() {
-    const router = useRouter()
     const [formView, setFormView] = useState<boolean>(false)
     const [successView, setSuccessView] = useState<boolean>(false)
     const [contactView, setContactView] = useState<boolean>(false)
@@ -76,7 +73,7 @@ function Banner() {
         //     alert('Please include all necessary details')
         // }
 
-        if (formView == true) {
+        if (formView == true && !isBlank) {
 
             const order = {
                 title: title,
@@ -169,15 +166,15 @@ function Banner() {
                                     <>
                                         <div className='flex flex-col p-2 space-x-2'>
                                             <label className='text-center text-lg font-semibold text-primary'>Host Name</label>
-                                            <Input value={hostName} onChange={(e) => setHostName(e.target.value)} className='bg-transparent outline-none border-2 border-primary focus:bg-primary text-primary focus:text-secondary focus:ring-none' />
+                                            <input value={hostName} onChange={(e) => setHostName(e.target.value)} className='outline-none border-primary focus:bg-primary text-primary focus:text-secondary focus:ring-none flex h-10 w-full rounded-md border border-input bg-transparent px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50' />
                                         </div>
                                         <div className='flex flex-col p-2 space-x-2'>
                                             <label className='text-center text-lg font-semibold text-primary'>Host Email</label>
-                                            <Input value={hostEmail} onChange={(e) => setHostEmail(e.target.value)} className='bg-transparent outline-none border-2 border-primary focus:bg-primary text-primary focus:text-secondary focus:ring-none' />
+                                            <input value={hostEmail} onChange={(e) => setHostEmail(e.target.value)} className='outline-none border-primary focus:bg-primary text-primary focus:text-secondary focus:ring-none flex h-10 w-full rounded-md border border-input bg-transparent px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50' />
                                         </div>
                                         <div className='flex flex-col p-2 space-x-2'>
                                             <label className='text-center text-lg font-semibold text-primary'>Host Phone</label>
-                                            <Input value={hostPhone} onChange={(e) => setHostPhone(e.target.value)} className='bg-transparent outline-none border-2 border-primary focus:bg-primary text-primary focus:text-secondary focus:ring-none' />
+                                            <input value={hostPhone} onChange={(e) => setHostPhone(e.target.value)} className='outline-none border-primary focus:bg-primary text-primary focus:text-secondary focus:ring-none flex h-10 w-full rounded-md border border-input bg-transparent px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50' />
                                         </div>
 
                                     </>
@@ -187,15 +184,15 @@ function Banner() {
                                     <>
                                         <div className='flex flex-col p-2 space-x-2'>
                                             <label className='text-center text-lg font-semibold text-primary'>Event Title</label>
-                                            <Input value={title} onChange={(e) => setTitle(e.target.value)} className='bg-transparent outline-none border-2 border-primary focus:bg-primary text-primary focus:text-secondary focus:ring-none' />
+                                            <input value={title} onChange={(e) => setTitle(e.target.value)} className='outline-none border-primary focus:bg-primary text-primary focus:text-secondary focus:ring-none flex h-10 w-full rounded-md border border-input bg-transparent px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50' />
                                         </div>
                                         <div className='flex flex-col p-2 space-x-2'>
                                             <label className='text-center text-lg font-semibold text-primary'>Additional Information</label>
-                                            <Input value={additionalInfo} onChange={(e) => setAdditionalInfo(e.target.value)} className='bg-transparent outline-none border-2 border-primary focus:bg-primary text-primary focus:text-secondary focus:ring-none' />
+                                            <input value={additionalInfo} onChange={(e) => setAdditionalInfo(e.target.value)} className='outline-noneborder-primary focus:bg-primary text-primary focus:text-secondary focus:ring-none flex h-10 w-full rounded-md border border-input bg-transparent px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50' />
                                         </div>
                                         <div className='flex flex-col p-2 space-x-2'>
                                             <label className='text-center text-lg font-semibold text-primary'>Estimated Attendance</label>
-                                            <Input value={estimatedAttendance | 0} onChange={(e) => setEstimatedAttendance(parseInt(e.target.value))} className='bg-transparent outline-none border-2 border-primary focus:bg-primary text-primary focus:text-secondary focus:ring-none' />
+                                            <input value={estimatedAttendance | 0} onChange={(e) => setEstimatedAttendance(parseInt(e.target.value))} className='outline-none border-primary focus:bg-primary text-primary focus:text-secondary focus:ring-none flex h-10 w-full rounded-md border border-input bg-transparent px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50' />
                                         </div>
                                     </>
                                 }
@@ -263,20 +260,20 @@ function Banner() {
                                         </div>
                                         <div className='flex flex-col p-2 space-x-2'>
                                             <label className='text-center text-lg font-semibold text-primary'>Location Street</label>
-                                            <Input value={locationStreet} onChange={(e) => setLocationStreet(e.target.value)} className='bg-transparent outline-none border-2 border-primary focus:bg-primary text-primary focus:text-secondary focus:ring-none' />
+                                            <input value={locationStreet} onChange={(e) => setLocationStreet(e.target.value)} className='outline-none border-primary focus:bg-primary text-primary focus:text-secondary focus:ring-none flex h-10 w-full rounded-md border border-input bg-transparent px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50' />
                                         </div>
                                         <div className='flex justify-center'>
                                             <div className='flex flex-col p-2 space-x-2'>
                                                 <label className='text-center text-lg font-semibold text-primary'>City</label>
-                                                <Input value={locationCity} onChange={(e) => setLocationCity(e.target.value)} className='bg-transparent outline-none border-2 border-primary focus:bg-primary text-primary focus:text-secondary focus:ring-none' />
+                                                <input value={locationCity} onChange={(e) => setLocationCity(e.target.value)} className='outline-none border-primary focus:bg-primary text-primary focus:text-secondary focus:ring-none flex h-10 w-full rounded-md border border-input bg-transparent px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50' />
                                             </div>
                                             <div className='flex flex-col p-2 space-x-2'>
                                                 <label className='text-center text-lg font-semibold text-primary'>State</label>
-                                                <Input value={locationState} onChange={(e) => setLocationState(e.target.value)} className='bg-transparent outline-none border-2 border-primary focus:bg-primary text-primary focus:text-secondary focus:ring-none' />
+                                                <input value={locationState} onChange={(e) => setLocationState(e.target.value)} className='outline-none border-primary focus:bg-primary text-primary focus:text-secondary focus:ring-none flex h-10 w-full rounded-md border border-input bg-transparent px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50' />
                                             </div>
                                             <div className='flex flex-col p-2 space-x-2'>
                                                 <label className='text-center text-lg font-semibold text-primary'>Zip Code</label>
-                                                <Input value={locationZip} onChange={(e) => setLocationZip(e.target.value)} className='bg-transparent outline-none border-2 border-primary focus:bg-primary text-primary focus:text-secondary focus:ring-none' />
+                                                <input value={locationZip} onChange={(e) => setLocationZip(e.target.value)} className='bg-transparent outline-none border-primary focus:bg-primary text-primary focus:text-secondary focus:ring-none flex h-10 w-full rounded-md border border-input px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50' />
                                             </div>
                                         </div>
                                     </>

@@ -7,25 +7,14 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/Select"
-// import { getAllCategories } from "@/lib/actions/category.actions";
 import { formUrlQuery, removeKeysFromQuery } from "@/lib/utils";
 import { useRouter, useSearchParams } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const CategoryFilter = () => {
-  const [categories, setCategories] = useState<any[]>([]);
+  const [categories, setCategories] = useState<[{name: string, _id: string}] | []>([]);
   const router = useRouter();
   const searchParams = useSearchParams();
-
-  useEffect(() => {
-    // const getCategories = async () => {
-    //   const categoryList = await getAllCategories();
-
-    //   categoryList! && setCategories(categoryList as ICategory[])
-    // }
-
-    // getCategories();
-  }, [])
 
   const onSelectCategory = (category: string) => {
       let newUrl = '';

@@ -18,11 +18,12 @@ const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!
 export default function App({ params: { id } }: Props) {
     const [loading, setLoading] = useState<boolean>(true)
     const [confirmed, setConfirmed] = useState<boolean>(false);
-    const [cost, setCost] = useState(0);
+    const cost = 0
 
     async function verifyId() {
         if(id == 'confirmed') {
             setConfirmed(true)
+            setLoading(false)
         }
     }
 

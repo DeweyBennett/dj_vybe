@@ -26,7 +26,7 @@ const Collection = ({ data, emptyTitle, emptyStateSubtext, collectionType }: Col
 
               return (
                 <li key={event._id} className="flex justify-center">
-                  <Card event={event} hasOrderLink={hasOrderLink} hidePrice={hidePrice} />
+                  <Card event={event} />
                 </li>
               )
             })}
