@@ -143,7 +143,7 @@ function Banner() {
                             </SignedOut>
 
                             <SignedIn>
-                                <Button type='button' onClick={() => { setData(), setFormView(true), setContactView(true) }} size="lg" className="rounded-full h-[54px] text-[16px] font-normal leading-[24px] w-full mb-6 sm:w-fit bg-secondary border-2 border-primary hover:bg-transparent hover:border-primary hover:text-secondary">
+                                <Button type='button' onClick={() => [setData(), setFormView(true), setContactView(true)]} size="lg" className="rounded-full h-[54px] text-[16px] font-normal leading-[24px] w-full mb-6 sm:w-fit bg-secondary border-2 border-primary hover:bg-transparent hover:border-primary hover:text-secondary">
                                     Book Event
                                 </Button>
                             </SignedIn>
@@ -275,7 +275,7 @@ function Banner() {
                             {contactView &&
                                 <div className='flex justify-center mb-6'>
                                     <div className="flex items-center gap-3">
-                                        <Button type="button" onClick={() => { setContactView(false), setEventView(true) }} size="lg" variant="secondary" className="rounded-full h-[54px] text-[16px] font-normal leading-[24px] w-full sm:w-fit bg-secondary border-2 border-primary hover:bg-transparent hover:border-primary hover:text-secondary">
+                                        <Button type="button" onClick={() =>  [setContactView(false), setEventView(true)] } size="lg" variant="secondary" className="rounded-full h-[54px] text-[16px] font-normal leading-[24px] w-full sm:w-fit bg-secondary border-2 border-primary hover:bg-transparent hover:border-primary hover:text-secondary">
                                             Event Information
                                         </Button>
 
@@ -289,11 +289,11 @@ function Banner() {
                             {eventView &&
                                 <div className='flex justify-center mb-6'>
                                     <div className="flex items-center gap-3">
-                                        <Button type="button" onClick={() => { setContactView(true), setEventView(false) }} size="lg" variant="secondary" className="rounded-full h-[54px] text-[16px] font-normal leading-[24px] w-full sm:w-fit bg-secondary border-2 border-primary hover:bg-transparent hover:border-primary hover:text-secondary">
+                                        <Button type="button" onClick={() => [setContactView(true), setEventView(false)]} size="lg" variant="secondary" className="rounded-full h-[54px] text-[16px] font-normal leading-[24px] w-full sm:w-fit bg-secondary border-2 border-primary hover:bg-transparent hover:border-primary hover:text-secondary">
                                             Contact Information
                                         </Button>
 
-                                        <Button type="button" onClick={() => { setEventView(false), setLogisticsView(true) }} size="lg" variant="secondary" className="rounded-full h-[54px] text-[16px] font-normal leading-[24px] w-full sm:w-fit bg-secondary border-2 border-primary hover:bg-transparent hover:border-primary hover:text-secondary">
+                                        <Button type="button" onClick={() => [setEventView(false), setLogisticsView(true)]} size="lg" variant="secondary" className="rounded-full h-[54px] text-[16px] font-normal leading-[24px] w-full sm:w-fit bg-secondary border-2 border-primary hover:bg-transparent hover:border-primary hover:text-secondary">
                                             Date and Time
                                         </Button>
 
@@ -307,7 +307,7 @@ function Banner() {
                             {logisticsView &&
                                 <div className='flex justify-center mb-6'>
                                     <div className="flex items-center gap-3">
-                                        <Button type="button" onClick={() => { setEventView(true), setLogisticsView(false) }} size="lg" variant="secondary" className="rounded-full h-[54px] text-[16px] font-normal leading-[24px] w-full sm:w-fit bg-secondary border-2 border-primary hover:bg-transparent hover:border-primary hover:text-secondary">
+                                        <Button type="button" onClick={() => [setEventView(true), setLogisticsView(false)]} size="lg" variant="secondary" className="rounded-full h-[54px] text-[16px] font-normal leading-[24px] w-full sm:w-fit bg-secondary border-2 border-primary hover:bg-transparent hover:border-primary hover:text-secondary">
                                             Date and Time
                                         </Button>
 
