@@ -6,9 +6,9 @@ import Search from "@/components/Search";
 import { getAllPublicEvents } from "@/lib/actions/event.actions";
 import Image from "next/image";
 
-export default async function Home( date: "desc", price: string, search: string ) {
+export default async function Home() {
 
-  const results = await getAllPublicEvents( date, price, search )
+  const results = await getAllPublicEvents( )
 
   const events = await results?.events
 

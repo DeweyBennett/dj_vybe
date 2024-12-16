@@ -14,13 +14,13 @@ export async function createEvent() {
   }
 }
 
-export async function getAllPublicEvents(search: string) {
-  const searchFilter = search ? `&& hostName match "${search}"` : ''
+export async function getAllPublicEvents() {
+  // const searchFilter = search ? `&& hostName match "${search}"` : ''
 
   try {
 
     const events = await client.fetch<PublicEventProps[]>(
-      groq`*[_type == 'publicEvent' ${searchFilter}]`
+      groq`*[_type == 'publicEvent']`
     )
 
     return {
