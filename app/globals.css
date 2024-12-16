@@ -2,20 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@layer components {
+    .text-gradient {
+        @apply bg-gradient-to-tl from-[#002c46cc] to-[#48fcfa] bg-clip-text text-transparent;
+    }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+    .bg-primary-gradient {
+        @apply bg-gradient-to-tl from-[#0f001c] via-[#9905fc] to-[#0f001c];
+    }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+    .bg-dark-gradient {
+        @apply bg-gradient-to-tl from-[#001521] via-[#2a9c9a] to-[#001521]
+    }
+
+    .bg-light-gradient {
+        @apply bg-gradient-to-tl from-[#48fcf97e] via-[#fff] to-[#48fcf980]
+    }
 }
