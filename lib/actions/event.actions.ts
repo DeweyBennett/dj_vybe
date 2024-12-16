@@ -14,24 +14,13 @@ export async function createEvent() {
   }
 }
 
-export async function getAllPublicEvents(date: string, price: string, search: string) {
-  const priceOrder = price 
-    ? `| order(price ${price})`
-    : ''
-
-  const dateOrder = date 
-    ? `| order(_createdAt ${date})`
-    : ''
-
-  const order = `${priceOrder}${dateOrder}`
-  const eventFilter = `_type == 'publicEvent'`
+export async function getAllPublicEvents(search: string) {
   const searchFilter = search ? `&& hostName match "${search}"` : ''
-  const filter = `*[${eventFilter}${searchFilter}]`
 
   try {
 
     const events = await client.fetch<PublicEventProps[]>(
-      groq`${filter} ${order}`
+      groq`*[_type == 'publicEvent' ${searchFilter}]`
     )
 
     return {

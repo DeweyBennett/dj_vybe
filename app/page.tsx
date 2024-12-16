@@ -10,7 +10,7 @@ export default async function Home( date: "desc", price: string, search: string 
 
   const results = await getAllPublicEvents( date, price, search )
 
-  const events = results?.events
+  const events = await results?.events
 
   return (
     <main>
