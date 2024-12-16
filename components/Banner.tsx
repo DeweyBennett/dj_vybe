@@ -196,7 +196,7 @@ function Banner() {
                                                 <label htmlFor="hours" className='text-center text-lg font-semibold text-primary'>Date of Event</label>
                                                 <DatePicker
                                                     selected={date}
-                                                    onChange={(date: any) => setDate(date!)}
+                                                    onChange={(date: Date | null) => setDate(date!)}
                                                     // showTimeSelect
                                                     // timeIntervals={120}
                                                     // timeClassName={(time: any) => handleColor(time)}
@@ -215,7 +215,7 @@ function Banner() {
                                                 <label htmlFor="hours" className='text-center text-lg font-semibold text-primary'>Start Time</label>
                                                 <DatePicker
                                                     selected={startTime}
-                                                    onChange={(time) => setStartTime(time!)}
+                                                    onChange={(time: Date | null) => setStartTime(time!)}
                                                     showTimeSelect
                                                     showTimeSelectOnly
                                                     timeIntervals={15}
@@ -229,7 +229,7 @@ function Banner() {
                                                 <label htmlFor="hours" className='text-center text-lg font-semibold text-primary'>End Time</label>
                                                 <DatePicker
                                                     selected={endTime}
-                                                    onChange={(time) => setEndTime(time!)}
+                                                    onChange={(time: Date | null) => setEndTime(time!)}
                                                     showTimeSelect
                                                     showTimeSelectOnly
                                                     timeIntervals={15}
