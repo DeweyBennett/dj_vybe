@@ -64,7 +64,6 @@ export default async function Home({ date, price, search }: Props) {
                   data={events}
                   emptyTitle="No Events Found"
                   emptyStateSubtext="Come back later"
-                  collectionType="All_Events"
                 />
                 </div>
             </section>

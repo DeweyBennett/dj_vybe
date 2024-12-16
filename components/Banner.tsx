@@ -126,10 +126,6 @@ function Banner() {
         setLocationZip('')
     }
 
-    if (user && hostName == '' && hostEmail == '' && hostPhone == '') {
-        setData()
-    }
-
     return (
         <div>
             {!successView ?
@@ -147,7 +143,7 @@ function Banner() {
                             </SignedOut>
 
                             <SignedIn>
-                                <Button type='button' onClick={() => { setFormView(true), setContactView(true) }} size="lg" className="rounded-full h-[54px] text-[16px] font-normal leading-[24px] w-full mb-6 sm:w-fit bg-secondary border-2 border-primary hover:bg-transparent hover:border-primary hover:text-secondary">
+                                <Button type='button' onClick={() => { setData(), setFormView(true), setContactView(true) }} size="lg" className="rounded-full h-[54px] text-[16px] font-normal leading-[24px] w-full mb-6 sm:w-fit bg-secondary border-2 border-primary hover:bg-transparent hover:border-primary hover:text-secondary">
                                     Book Event
                                 </Button>
                             </SignedIn>
