@@ -16,7 +16,7 @@ function Banner() {
     const [eventView, setEventView] = useState<boolean>(false)
     const [logisticsView, setLogisticsView] = useState<boolean>(false)
     const [title, setTitle] = useState<string>("")
-    const [date, setDate] = useState(new Date())
+    const [date, setDate] = useState<Date>(new Date())
     const [startTime, setStartTime] = useState(new Date())
     const [endTime, setEndTime] = useState(new Date())
     const [totalHours, setTotalHours] = useState<string>("")
@@ -125,10 +125,6 @@ function Banner() {
         setLocationState('')
         setLocationZip('')
     }
-
-    function handleColor(time: Date) {
-        return time.getHours() >= 8 && time.getHours() <= 20 ? "text-green-500" : "text-red-500";
-    };
 
     if (user && hostName == '' && hostEmail == '' && hostPhone == '') {
         setData()

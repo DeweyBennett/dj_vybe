@@ -33,6 +33,7 @@ const CategoryFilter = () => {
       }
 
       router.push(newUrl, { scroll: false });
+      setCategories([])
   }
 
   return (

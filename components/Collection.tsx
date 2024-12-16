@@ -21,8 +21,6 @@ const Collection = ({ data, emptyTitle, emptyStateSubtext, collectionType }: Col
         <div className="flex flex-col items-centerbg-white lg:mx-auto p-5 md:px-10 xl:px-0 w-full min-h-[200px] rounded-xl shadow-lg shadow-secondary py-28 text-center">
           <ul className="grid w-full grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:gap-10">
             {events!.map((event) => {
-              const hasOrderLink = collectionType === 'Events_Organized';
-              const hidePrice = collectionType === 'My_Tickets';
 
               return (
                 <li key={event._id} className="flex justify-center">
