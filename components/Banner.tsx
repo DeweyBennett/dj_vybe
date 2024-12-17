@@ -135,7 +135,7 @@ function Banner() {
                             <h1 className="font-bold text-[40px] leading-[48px] lg:text-[48px] lg:leading-[60px]  xl:text-[58px] xl:leading-[74px] text-gradient">Want to book DJ Vybe for your event? Contact us today.</h1>
                             <p className="text-[20px] font-normal leading-[30px] tracking-[2%] md:font-normal md:text-[24px] md:leading-[36px] text-primary">Turn any occasion into an unforgettable experience with DJ Vybe. We will work together to curate a personalized playlist that not only mirrors your tastes but also enhances the overall ambiance of the event. Our dedication extends beyond merely providing music, we aim to craft an experience that transcends your expectations.</p>
                             <SignedOut>
-                                <Button className="rounded-full h-[54px] text-[16px] font-normal leading-[24px] w-full sm:w-fit bg-secondary border-2 border-primary hover:bg-transparent hover:border-primary hover:text-secondary" variant={'secondary'} size="lg">
+                                <Button className="rounded-full h-[54px] text-[16px] font-normal leading-[24px] w-full mb-6 sm:w-fit bg-secondary border-2 border-primary hover:bg-transparent hover:border-primary hover:text-secondary" variant={'secondary'} size="lg">
                                     <Link href="/auth/sign-in">
                                         Book Event
                                     </Link>
