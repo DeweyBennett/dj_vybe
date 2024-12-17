@@ -210,7 +210,7 @@ function Banner() {
                                                 <p className='text-center text-lg text-primary'><span className=''>$</span>{cost * .01}</p>
                                             </div>
                                         </div>
-                                        <div className='flex'>
+                                        <div className='flex flex-col justify-center items-center sm:flex-row'>
                                             <div className='flex flex-col p-2 space-x-2'>
                                                 <label htmlFor="hours" className='text-center text-lg font-semibold text-primary'>Start Time</label>
                                                 <DatePicker
