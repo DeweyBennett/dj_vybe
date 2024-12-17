@@ -54,8 +54,8 @@ export default async function Home() {
                 <div className="flex items-center w-full flex-col gap-5 md:flex-row mb-12">
                   <Suspense>
                     <Search />
+                    <CategoryFilter />
                   </Suspense>
-                  <CategoryFilter />
                 </div>
                 <Collection 
                   data={events}
