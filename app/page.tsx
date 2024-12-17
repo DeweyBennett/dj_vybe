@@ -5,6 +5,7 @@ import Hero from "@/components/Hero";
 import Search from "@/components/Search";
 import { getAllPublicEvents } from "@/lib/actions/event.actions";
 import Image from "next/image";
+import { Suspense } from 'react'
 
 export default async function Home() {
 
@@ -51,7 +52,9 @@ export default async function Home() {
             <section aria-labelledby="products-heading" className="w-full my-8 flex flex-col gap-8 md:gap-12">
               <div className='col-span-3'>
                 <div className="flex items-center w-full flex-col gap-5 md:flex-row mb-12">
-                  <Search />
+                  <Suspense>
+                    <Search />
+                  </Suspense>
                   <CategoryFilter />
                 </div>
                 <Collection 
