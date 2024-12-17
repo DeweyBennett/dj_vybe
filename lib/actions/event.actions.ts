@@ -16,7 +16,6 @@ export async function createEvent() {
 
 export async function getAllPublicEvents() {
   // const searchFilter = search ? `&& hostName match "${search}"` : ''
-
   try {
 
     const events = await client.fetch<PublicEventProps[]>(

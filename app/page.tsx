@@ -8,7 +8,7 @@ import Image from "next/image";
 
 export default async function Home() {
 
-  const results = await getAllPublicEvents( )
+  const results = await getAllPublicEvents()
 
   const events = await results?.events
 
